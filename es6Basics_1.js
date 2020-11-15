@@ -74,3 +74,6 @@ console.log(magic2());
 
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
 console.log(myConcat([1, 2], [3, 4, 5]));
+
+const increment = (number = 1, value = 1) => number + value;
+console.log("Default param increment:", increment());
