@@ -88,6 +88,7 @@ let arr2;
 arr2 = [...arr1];
 console.log(arr2);
 
+// Obj destructuring
 const HIGH_TEMPERATURES = {
   yesterday: 75,
   today: 77,
@@ -112,3 +113,20 @@ const LOCAL_FORECAST = {
 const { today: { low: lowToday, high: highToday } } = LOCAL_FORECAST;
 console.log("Today high is:", highToday, "degrees.");
 
+// Array destructuring
+{
+  const [a, b] = [1, 2, 3, 4, 5, 6];
+  console.log(a, b); // 1, 2
+}
+
+{
+  const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+  console.log(a, b, c); // 1, 2, 5
+}
+
+{
+  let a = 8, b = 6;
+  console.log(`B: ${b} and A: ${a}`);
+  [a, b] = [b, a];
+  console.log(`B: ${b} and A: ${a}`);
+}
