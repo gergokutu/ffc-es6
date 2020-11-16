@@ -1,3 +1,4 @@
+// Let, const
 let catName;
 let quote;
 
@@ -45,6 +46,7 @@ function editInPlace(s) {
 editInPlace(s);
 console.log("Modified array:", s);
 
+// Object.freeze
 function freezeObj() {
   'use strict';
   const MATH_CONSTANTS = {
@@ -64,6 +66,7 @@ function freezeObj() {
 const PI = freezeObj();
 console.log(PI);
 
+// Arrow functions
 const magic = () => {
   "use strict";
   return new Date();
@@ -78,6 +81,7 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 const increment = (number = 1, value = 1) => number + value;
 console.log("Default param increment:", increment());
 
+// Spread operator
 const sum = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 }
@@ -146,3 +150,31 @@ function removeFirstTwo(list) {
 }
 const arr = removeFirstTwo(source);
 console.log(`Source: ${source}, removeFirstTwo: ${arr}`);
+
+// Destructuring objects as functon params
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const third = (stats) => {
+  const { max, min } = stats;
+  return (max + min) / 3.0
+};
+console.log("Third:", third(stats));
+
+const half = ({ max, min }) => (max + min) / 2.0;
+console.log("Half:", half(stats));
+
+// Template literals
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+const failuresList = ({ failure }) => failure.map(item => `<li class="text-warning">${item}</li>`);
+console.log("Test:", failuresList(result));
