@@ -178,3 +178,15 @@ const result = {
 };
 const failuresList = ({ failure }) => failure.map(item => `<li class="text-warning">${item}</li>`);
 console.log("Test:", failuresList(result));
+
+// Object property shorthand
+const createPerson = (name, age, gender) => {
+  "use strict";
+  return {
+    // name: name...
+    name,
+    age,
+    gender
+  };
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male"));
